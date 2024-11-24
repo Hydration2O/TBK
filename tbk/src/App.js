@@ -1,17 +1,16 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { createBrowserRouter } from "react-router";
 import NavBar from "./components/NavBar";
-
-const queryClient = new QueryClient();
+import Home from "./components/Home";
+import RegisterUser from "./components/RegisterUser";
+import LoginUser from "./components/LoginUser";
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <div className="App">
-        <NavBar />
-      </div>
-    </QueryClientProvider>
+    <div className="App">
+      <NavBar />
+    </div>
   );
 }
 

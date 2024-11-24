@@ -6,11 +6,11 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <div>
+    <nav>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/Register">Register</NavLink>
       <NavLink to="/Login">Login</NavLink>
-    </div>
+    </nav>
   );
 };
 

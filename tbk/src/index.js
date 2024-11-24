@@ -2,12 +2,15 @@ import React from "react";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import RegisterUser from "./components/RegisterUser";
 import LoginUser from "./components/LoginUser";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
@@ -39,9 +42,12 @@ const router = createBrowserRouter([
   },
 ]);
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
