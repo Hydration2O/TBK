@@ -22,7 +22,7 @@ const RegisterUser = () => {
         <Form>
           <Field as="input" name="username" type="text" />
           <Field as="input" name="image" type="text" />
-          <Field as="input" name="password" type="text" />
+          <Field as="input" name="password" type="password" />
           <button type="submit">Register</button>
         </Form>
       </Formik>
