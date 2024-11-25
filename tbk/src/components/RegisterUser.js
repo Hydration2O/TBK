@@ -1,12 +1,12 @@
 import React from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { Formik, Form, Field } from "formik";
-import { AddNewUser } from "../API/users";
+import { Register } from "../API/users";
 import "../App.css";
 
 const RegisterUser = () => {
   const mutation = useMutation({
-    mutationFn: (newUser) => AddNewUser(newUser),
+    mutationFn: (newUser) => Register(newUser),
   });
 
   function submit(values) {

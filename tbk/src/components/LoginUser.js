@@ -2,11 +2,11 @@ import React from "react";
 // ---------------------------------------------
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { Formik, Form, Field } from "formik";
-import { LogUserByName } from "../API/users";
+import { Login } from "../API/users";
 
 const LoginUser = () => {
   const mutation = useMutation({
-    mutationFn: (newUser) => LogUserByName(newUser),
+    mutationFn: (newUser) => Login(newUser),
   });
 
   function submit(values) {
