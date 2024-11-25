@@ -2,6 +2,7 @@ import React from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { Formik, Form, Field } from "formik";
 import { AddNewUser } from "../API/users";
+import "../App.css";
 
 const RegisterUser = () => {
   const mutation = useMutation({
@@ -14,18 +15,70 @@ const RegisterUser = () => {
   }
 
   return (
-    <div>
-      <Formik
-        initialValues={{ username: "", image: "", password: "" }}
-        onSubmit={submit}
-      >
-        <Form>
-          <Field as="input" name="username" type="text" />
-          <Field as="input" name="image" type="text" />
-          <Field as="input" name="password" type="password" />
-          <button type="submit">Register</button>
-        </Form>
-      </Formik>
+    <div className="registerMain">
+      {" "}
+      {/* Main Rigister page div*/}
+      <div>
+        {" "}
+        {/* Picture div*/}
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1-d45bTo0TcWGLAOTK2jIBu8u-DHjzwy1EjE7M-xeGLdZj9ug5uePlwsesspxMQatLGo&usqp=CAU"
+          className="bank-logo"
+          alt="rigister Logo"
+        />
+      </div>
+      <div>
+        {/* Register div*/}
+        <h1>Register Your Account</h1>
+        <div>if you have an account, Login here</div>
+        <div>
+          {" "}
+          {/* Formik and rigister div*/}
+          <Formik
+            initialValues={{ username: "", image: "", password: "" }}
+            onSubmit={submit}
+          >
+            <Form>
+              <div>
+                <div>
+                  <h4>Name</h4>
+                  <Field
+                    placeholder="Name"
+                    className="barStyle"
+                    as="input"
+                    name="username"
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <h4>Image</h4>
+                  <Field
+                    placeholder="Image Url"
+                    className="barStyle"
+                    as="input"
+                    name="image"
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <h4>Password</h4>
+                  <Field
+                    placeholder="Password"
+                    className="barStyle"
+                    as="input"
+                    name="password"
+                    type="password"
+                  />
+                </div>
+
+                <button class="button" type="submit">
+                  Register
+                </button>
+              </div>
+            </Form>
+          </Formik>
+        </div>
+      </div>
     </div>
   );
 };

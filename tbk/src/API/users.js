@@ -4,7 +4,10 @@ async function AddNewUser(data) {
   const response = await instance.post(`/mini-project/api/auth/register`, data);
   return response;
 }
+// ----------------------------------------------
+async function LogUserByName(data) {
+  const response = await instance.post(`/mini-project/api/auth/login`, data);
+  return response;
+}
 
-async function name(params) {}
-
-export { AddNewUser };
+export { AddNewUser, LogUserByName };
