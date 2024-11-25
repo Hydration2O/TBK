@@ -3,10 +3,16 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { Formik, Form, Field } from "formik";
 import { register } from "../API/users";
 import "../App.css";
+import { useNavigate } from "react-router-dom";
 
 const RegisterUser = () => {
+  const navigate = useNavigate();
+
   const mutation = useMutation({
     mutationFn: (newUser) => register(newUser),
+    onSuccess: () => {
+      navigate("/account");
+    },
   });
 
   function submit(values) {

@@ -21,4 +21,8 @@ async function Login(userInfo) {
   return response;
 }
 
-export { register, Login };
+async function Profile() {
+  const response = await instance.get("/mini-project/api/auth/me");
+  return response;
+}
+export { register, Login, Profile };
