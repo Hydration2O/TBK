@@ -1,14 +1,24 @@
 import instance from "./index";
 import axios from "axios";
 
-async function Register(data) {
-  const response = await instance.post(`/mini-project/api/auth/register`, data);
+const register = async (userInfo) => {
+  const response = await instance.post(
+    "/mini-project/api/auth/register",
+    userInfo
+  );
+  localStorage.setItem("token", response.token);
+  console.log("login data", response);
+  return response;
+};
+
+async function Login(userInfo) {
+  const response = await instance.post(
+    "/mini-project/api/auth/login",
+    userInfo
+  );
+  localStorage.setItem("token", response.token);
+  console.log("login data", response);
   return response;
 }
 
-async function Login(data) {
-  const response = await instance.post(`/mini-project/api/auth/login`, data);
-  return response;
-}
-
-export { Register, Login };
+export { register, Login };
