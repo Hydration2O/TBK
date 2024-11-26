@@ -8,13 +8,7 @@ const Home = () => {
     return <Navigate to="/login" />;
   }
 
-  return <Account />;
-  return (
-    <div>
-      <img className="homeImage" />
-      <div>Welcome to TBK! thsis is the home page</div>
-    </div>
-  );
+  return <Navigate to="/account" />;
 };
 
 export default Home;

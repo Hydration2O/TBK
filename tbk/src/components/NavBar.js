@@ -18,13 +18,13 @@ const NavBar = () => {
       </div>
       <nav>
         <NavLink to="/">
-          <button class="button"> Home</button>
+          <button className="button"> Home</button>
         </NavLink>
         <NavLink to="/Register">
-          <button class="button"> Register</button>
+          <button className="button"> Register</button>
         </NavLink>
         <NavLink to="/Login">
-          <button class="button"> Log-In</button>
+          <button className="button"> Log-In</button>
         </NavLink>
       </nav>
     </div>

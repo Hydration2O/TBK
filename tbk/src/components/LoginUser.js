@@ -4,6 +4,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { Formik, Form, Field } from "formik";
 import { Login } from "../API/users";
 import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const LoginUser = () => {
   const navigate = useNavigate();
@@ -22,6 +23,10 @@ const LoginUser = () => {
 
   return (
     <div>
+      <div>
+        if you don't have an account, Register
+        <NavLink to="/register">here</NavLink>
+      </div>
       <Formik initialValues={{ username: "", password: "" }} onSubmit={submit}>
         <Form>
           <Field

@@ -3,7 +3,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { Formik, Form, Field } from "formik";
 import { register } from "../API/users";
 import "../App.css";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const RegisterUser = () => {
   const navigate = useNavigate();
@@ -36,7 +36,10 @@ const RegisterUser = () => {
       <div>
         {/* Register div*/}
         <h1>Register Your Account</h1>
-        <div>if you have an account, Login here</div>
+        <div>
+          if you have an account, Login
+          <NavLink to="/login">here</NavLink>
+        </div>
         <div>
           {" "}
           {/* Formik and rigister div*/}
@@ -77,7 +80,7 @@ const RegisterUser = () => {
                   />
                 </div>
 
-                <button class="button" type="submit">
+                <button className="button" type="submit">
                   Register
                 </button>
               </div>

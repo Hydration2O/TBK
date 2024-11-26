@@ -15,16 +15,16 @@ const ProfileNavBar = () => {
       </div>
       <nav>
         <NavLink to="/account">
-          <button class="button"> Account</button>
+          <button className="button"> Account</button>
         </NavLink>
         <NavLink to="/profile">
-          <button class="button"> profile</button>
+          <button className="button"> profile</button>
         </NavLink>
         <NavLink to="/transactions">
-          <button class="button"> Transactions</button>
+          <button className="button"> Transactions</button>
         </NavLink>
         <NavLink to="/userslist">
-          <button class="button"> Users</button>
+          <button className="button"> Users</button>
         </NavLink>
       </nav>
     </div>
